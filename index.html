@@ -42,21 +42,22 @@
   </style>
   <script type="text/javascript">
   $(document).ready(function() {
-    // Load Orioles data
+    // Load Orioles data with a JSON call to the API
     $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
       var hr_record = data.statistics.hitting.onbase.hr;
-      $('.mlb-hr .record').text(hr_record);
+      $('.mlb-hr .record').text("Current: " + hr_record);
     });
 
-    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
-      // var hr_record = data.statistics.hitting.onbase.hr;
-      // $('.mlb-hr .record').text(hr_record);
-    });
+    // Dummy code which can be used by updating the API link and selecting the proper JSON key
+    // $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+    //   var hr_record = data.statistics.hitting.onbase.hr;
+    //   $('.mlb-hr .record').text(hr_record);
+    // });
 
-    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
-      // var hr_record = data.statistics.hitting.onbase.hr;
-      // $('.mlb-hr .record').text(hr_record);
-    });
+    // $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+    //   var hr_record = data.statistics.hitting.onbase.hr;
+    //   $('.mlb-hr .record').text(hr_record);
+    // });
   });
   </script>
 </head>
@@ -74,13 +75,29 @@
     <div class="record-box">
       <div class="current">
         <h3>Current Record</h3>
-        <div class="record">264</div>
-        <p>1997 Seattle Mariners</p>
+        <p>264</p>
+        <p>Set by — 1997 Seattle Mariners</p>
       </div>
       <div class="chaser">
         <h3>Chaser</h3>
-        <p>Team: '16 Baltimore Orioles</p>
-        <div>Current: <p class="record"></p></div>
+        <p class="record">Current:</p>
+        <p>Set by — 2016 Baltimore Orioles</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mlb-wins">
+    <h2>MLB - Another Stat</h2>
+    <div class="record-box">
+      <div class="current">
+        <h3>Current Record</h3>
+        <p>...</p>
+        <p>Set by —</p>
+      </div>
+      <div class="chaser">
+        <h3>Chaser</h3>
+        <p class="record">Current:</p>
+        <p>Set by —</p>
       </div>
     </div>
   </section>

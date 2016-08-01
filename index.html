@@ -4,25 +4,87 @@
 <head>
   <meta charset="utf-8">
   <title>Record Chase</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   <style type="text/css">
     body {
+      font-family: 'Lato', sans-serif;
       margin: 40px auto;
       max-width: 650px;
       line-height: 1.6;
       font-size: 18px;
       color: #444;
-      padding: 0 10px
+      padding: 0 10px;
     }
+
     h1, h2, h3 {
-      line-height:1.2
+      line-height: 1.2;
+    }
+
+    .record-box {
+      display: flex;
+    }
+
+    .current, .chaser {
+      border: 1px solid black;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .current {
+      flex-grow: 1;
+      margin-right: 15px;
+    }
+
+    .chaser {
+      flex-grow: 2;
     }
   </style>
   <script type="text/javascript">
-    
+  $(document).ready(function() {
+    // Load Orioles data
+    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+      var hr_record = data.statistics.hitting.onbase.hr;
+      $('.mlb-hr .record').text(hr_record);
+    });
+
+    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+      // var hr_record = data.statistics.hitting.onbase.hr;
+      // $('.mlb-hr .record').text(hr_record);
+    });
+
+    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+      // var hr_record = data.statistics.hitting.onbase.hr;
+      // $('.mlb-hr .record').text(hr_record);
+    });
+  });
   </script>
 </head>
 
 <body>
   
+<header>
+  <h1>Record Chase</h1>
+  <p>Yo yo yo!</p>
+</header>
+
+<main>
+  <section class="mlb-hr">
+    <h2>MLB - Most Single Season Team Homeruns</h2>
+    <div class="record-box">
+      <div class="current">
+        <h3>Current Record</h3>
+        <div class="record">264</div>
+        <p>1997 Seattle Mariners</p>
+      </div>
+      <div class="chaser">
+        <h3>Chaser</h3>
+        <p>Team: '16 Baltimore Orioles</p>
+        <div>Current: <p class="record"></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
 </body>
 </html>

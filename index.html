@@ -43,10 +43,19 @@
   <script type="text/javascript">
   $(document).ready(function() {
     // Load Orioles data with a JSON call to the API
-    $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+    // $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
+    //   var hr_record = data.statistics.hitting.onbase.hr;
+    //   $('.mlb-hr .record').text("Current: " + hr_record);
+    // });
+
+    $.ajax({
+      url: 'http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p',
+      dataType: "json",
+      crossDomain: true
+    }).done(function(data) {
       var hr_record = data.statistics.hitting.onbase.hr;
       $('.mlb-hr .record').text("Current: " + hr_record);
-    });
+    })
 
     // Dummy code which can be used by updating the API link and selecting the proper JSON key
     // $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {

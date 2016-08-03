@@ -43,11 +43,6 @@
   <script type="text/javascript">
   $(document).ready(function() {
     // Load Orioles data with a JSON call to the API
-    // $.getJSON('http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p', function(data) {
-    //   var hr_record = data.statistics.hitting.onbase.hr;
-    //   $('.mlb-hr .record').text("Current: " + hr_record);
-    // });
-
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://api.sportradar.us/mlb-t5/seasontd/2016/REG/teams/75729d34-bca7-4a0f-b3df-6f26c6ad3719/statistics.json?api_key=guuudtz97apty5b2r3jujs4p", true);
     xhr.onload = function () {
